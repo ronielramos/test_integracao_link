@@ -1,6 +1,6 @@
-import { criarPedido } from "../../services/bling.service";
-import { RetornoCriacaoPedido, Pedido } from "../../teste-integracao";
-import { getCollection } from "../../services/database.service";
+import { criarPedido } from '../../services/bling.service'
+import { RetornoCriacaoPedido, Pedido } from '../../teste-integracao'
+import { getCollection } from '../../services/database.service'
 
 type Data = {
   person_name: string;
@@ -21,25 +21,25 @@ export const transformar = (data: Data): Pedido => {
         vlr_unit: data.value
       }
     ]
-  };
-};
+  }
+}
 
 export const criarPedidoBling = (
   pedido: Pedido
 ): Promise<RetornoCriacaoPedido> => {
-  return criarPedido(pedido);
-};
+  return criarPedido(pedido)
+}
 
 export const salvarPedidoNoBd = async (pedido: Pedido): Promise<unknown> => {
-  const PedidoCollection = getCollection("pedido");
+  const PedidoCollection = getCollection('pedido')
 
-  const hoje = new Date().toLocaleDateString("pt-br");
-  const pedidosDoDia = await PedidoCollection.findOne({ dia: hoje });
+  const hoje = new Date().toLocaleDateString('pt-br')
+  const pedidosDoDia = await PedidoCollection.findOne({ dia: hoje })
 
   if (pedidosDoDia) {
-    pedidosDoDia.pedidos.push(pedido);
-    return pedidosDoDia.save();
+    pedidosDoDia.pedidos.push(pedido)
+    return pedidosDoDia.save()
   }
 
-  return PedidoCollection.insertOne({ dia: hoje, pedidos: [pedido] });
-};
+  return PedidoCollection.insertOne({ dia: hoje, pedidos: [pedido] })
+}
