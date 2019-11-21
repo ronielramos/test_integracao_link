@@ -1,14 +1,26 @@
-Comandos úteis:
-start - Iniciar app.ts com nodemon
-prod - Realizar o build do App e iniciar o app.js com PM2
-prod:stop - Para o processo criado pelo PM2
+<h3>Comandos úteis:</h3><br>
+<ul> 
+  <li>start - Iniciar app.ts com nodemon</li>
+  <li>prod - Realizar o build do App e iniciar o app.js com PM2</li>
+  <li>prod:stop - Para o processo criado pelo PM2</li>
+</ul>
+<br>
+<br>
 
-Variáveis ambientais necessárias para rodar o projeto:
-PORT
-PIPEDRIVE_API_KEY
-BLING_API_KEY
-MONGODB_URI
+<h3>Variáveis ambientais necessárias para rodar o projeto:</h3>
 
-Informações extras:
-Necessário criação do Webhook de edicão de Deal no Pipeprive e aponta-lo para o endpoint: /webhook/notificacao"
-Logs adicionados para avaliação e DEBUG
+<ul>
+<li>PORT</li>
+<li>PIPEDRIVE_API_KEY</li>
+<li>BLING_API_KEY</li>
+<li>MONGODB_URI</li>
+</ul>
+
+<br>
+<br>
+
+<h3>Informações extras:</h3>
+<ul>
+ 
+<li>Necessário criação do Webhook de edicão de Deal no Pipeprive e aponta-lo para o endpoint: /webhook/notificacao"
+<li>Logs adicionados para avaliação e DEBUG
