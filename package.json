@@ -10,7 +10,7 @@
     "url": "git@github.com:dev-tests/teste-integracao-link.git"
   },
   "scripts": {
-    "start": "nodemon --exec ts-node ./src/app.ts",
+    "start": "nodemon ./src/app.ts",
     "prod": "tsc | pm2 start ./dist/app.js",
     "prod:stop": "pm2 stop all",
     "lint": "eslint ./src/**/*.ts --fix"
