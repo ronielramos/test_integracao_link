@@ -1,7 +1,9 @@
+
 import express from 'express'
 import { FindOneOptions } from 'mongodb'
 
 import { getCollection } from '../../services/database.service'
+
 const router = express.Router()
 
 router.get('/', async (req, res) => {
