@@ -99,3 +99,4 @@ public/
 
 # Extras
 dist/
+yarn.lock
