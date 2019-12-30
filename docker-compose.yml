@@ -1,0 +1,7 @@
+version: "3.7"
+services:
+  roniel:
+    image: teste-integracao-link
+    build:
+      context: .
+    env_file: .env
