@@ -25,3 +25,5 @@ app.use('/webhook', webhookRoute)
 app.use('/pedidos', pedidosRoute)
 
 app.listen(process.env.PORT, () => console.log(`SERVER ON PORT: ${process.env.PORT}`))
+
+app.get('/healthcheck', (_req, res) => res.status(200).end())
