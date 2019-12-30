@@ -5,7 +5,8 @@ module.exports = {
     es6: true
   },
   extends: [
-    'standard'
+    "plugin:@typescript-eslint/recommended",
+    'standard',
   ],
   globals: {
     Atomics: 'readonly',
@@ -17,8 +18,21 @@ module.exports = {
   },
   plugins: [
     '@typescript-eslint',
+    'eslint-plugin-import-helpers',
     'standard'
   ],
   rules: {
+    'import-helpers/order-imports': [
+      'warn',
+      {
+        newlinesBetween: 'always', // new line between groups
+        groups: [
+          'module',
+          '/^@shared/',
+          ['parent', 'sibling', 'index'],
+        ],
+        alphabetize: { order: 'asc', ignoreCase: true },
+      },
+    ],
   }
 }

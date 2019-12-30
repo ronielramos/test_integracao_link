@@ -1,24 +1,16 @@
 import compression from 'compression'
 import cors from 'cors'
-import helmet from 'helmet'
 import express from 'express'
+import helmet from 'helmet'
 
-import webhookRoute from './modules/webhook/webhook.router'
 import pedidosRoute from './modules/report/report.controller'
-
-require('dotenv').config()
-
+import webhookRoute from './modules/webhook/webhook.router'
 const app = express()
 
 const corsOptions = {
   origin: '*',
   methods: ['GET', 'POST'],
-  allowedHeaders: [
-    'Content-Type',
-    'Authorization',
-    'Origin',
-    'X-Requested-With'
-  ],
+  allowedHeaders: ['Content-Type', 'Authorization', 'Origin', 'X-Requested-With'],
   credentials: true
 }
 
@@ -32,6 +24,4 @@ app.use(cors(corsOptions))
 app.use('/webhook', webhookRoute)
 app.use('/pedidos', pedidosRoute)
 
-app.listen(process.env.PORT, () =>
-  console.log(`SERVER ON PORT: ${process.env.PORT}`)
-)
+app.listen(process.env.PORT, () => console.log(`SERVER ON PORT: ${process.env.PORT}`))

@@ -1,10 +1,8 @@
-import { executar } from './external-request'
 import { Pedido, RetornoCriacaoPedido } from '../teste-integracao'
+import { executar } from './external-request'
 import { toXML } from './utils'
 
-export const criarPedido = async (
-  pedido: Pedido
-): Promise<RetornoCriacaoPedido> => {
+export const criarPedido = async (pedido: Pedido): Promise<RetornoCriacaoPedido> => {
   const pedidoFormatado = {
     pedido: {
       cliente: pedido.cliente,

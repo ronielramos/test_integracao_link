@@ -1,6 +1,7 @@
 import express from 'express'
-import { getCollection } from '../../services/database.service'
 import { FindOneOptions } from 'mongodb'
+
+import { getCollection } from '../../services/database.service'
 const router = express.Router()
 
 router.get('/', async (req, res) => {
@@ -27,8 +28,8 @@ router.get('/', async (req, res) => {
 
     res.json({
       pagina,
-      qtd_solicitada: qtd,
-      qtd_recebida: pedidosPorDia.length,
+      qtdSolicitada: qtd,
+      qtdRecebida: pedidosPorDia.length,
       itens: pedidosPorDia
     })
   } catch (e) {
