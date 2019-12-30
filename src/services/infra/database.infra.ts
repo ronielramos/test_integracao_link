@@ -17,8 +17,6 @@ class DbClient {
 
       const database = await MongoClient.connect(process.env.MONGODB_URI || '', {
         poolSize: 10,
-        reconnectInterval: 2000,
-        autoReconnect: true,
         useNewUrlParser: true,
         useUnifiedTopology: true
       })
